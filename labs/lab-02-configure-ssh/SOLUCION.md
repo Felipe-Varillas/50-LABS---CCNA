@@ -8,9 +8,8 @@ Reemplazar Telnet por SSH como método de administración remota: cifrar las con
 
 ## Topología
 
-![Topología Lab 02](topologia.png)
+![Topología Lab 02](topologia2.png)
 
-*(Imagen de referencia — reemplázala por tu captura real de la topología armada en EVE-NG)*
 
 ## Tabla de direccionamiento
 
