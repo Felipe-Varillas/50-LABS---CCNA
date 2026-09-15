@@ -36,7 +36,7 @@ ccna-labs/
     │   └── topologia.png
     ├── lab-02-configure-ssh/
     │   ├── SOLUCION.md
-    │   └── topologia.png
+    │   └── topologia2.png
     └── lab-XX-.../              👈 se irán agregando en el mismo formato
 ```
 
