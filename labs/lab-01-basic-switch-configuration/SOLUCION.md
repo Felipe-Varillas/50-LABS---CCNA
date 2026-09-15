@@ -10,7 +10,6 @@ Dejar un switch recién iniciado en un estado administrable de forma segura: nom
 
 ![Topología Lab 01](topologia.png)
 
-*(Imagen de referencia — reemplázala por tu captura real de la topología armada en EVE-NG)*
 
 ## Tabla de direccionamiento
 
