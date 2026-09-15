@@ -2,7 +2,7 @@
 
 **50 laboratorios prácticos de redes, configurados y verificados en EVE-NG**, rumbo a la certificación Cisco CCNA.
 
-![Labs completados](https://img.shields.io/badge/labs%20completados-2%2F50-blue)
+![Labs completados](https://img.shields.io/badge/labs%20completados-5%2F50-blue)
 ![Simulador](https://img.shields.io/badge/simulador-EVE--NG-orange)
 ![Cisco IOS](https://img.shields.io/badge/plataforma-Cisco%20IOS-1ba0d7)
 ![Licencia](https://img.shields.io/badge/licencia-MIT-lightgrey)
@@ -37,6 +37,15 @@ ccna-labs/
     ├── lab-02-configure-ssh/
     │   ├── SOLUCION.md
     │   └── topologia2.png
+    ├── lab-03-configure-router-interfaces/
+    │   ├── SOLUCION.md
+    │   └── topologia.png
+    ├── lab-04-verify-directly-connected-networks/
+    │   ├── SOLUCION.md
+    │   └── topologia.png
+    ├── lab-05-implement-a-small-network/
+    │   ├── SOLUCION.md
+    │   └── topologia.png
     └── lab-XX-.../              👈 se irán agregando en el mismo formato
 ```
 
@@ -60,9 +69,9 @@ Cada carpeta de laboratorio contiene:
 |---|---|---|
 | 01 | Configuración básica del switch (modo físico) | ✅ |
 | 02 | Configurar SSH | ✅ |
-| 03 | Configurar interfaces del router | ⏳ |
-| 04 | Verificar redes directamente conectadas | ⏳ |
-| 05 | Implementar una red pequeña | ⏳ |
+| 03 | Configurar interfaces del router | ✅ |
+| 04 | Verificar redes directamente conectadas | ✅ |
+| 05 | Implementar una red pequeña | ✅ |
 | 06 | Configurar parámetros básicos del router | ⏳ |
 | 07 | Configuración de VLAN | ⏳ |
 | 08 | Configurar VLANs y trunking | ⏳ |
