@@ -36,14 +36,14 @@ ccna-labs/
     │   └── topologia.png
     ├── lab-02-configure-ssh/
     │   ├── SOLUCION.md
-    │   └── topologia2.png
+    │   └── topologia.png
     └── lab-XX-.../              👈 se irán agregando en el mismo formato
 ```
 
 Cada carpeta de laboratorio contiene:
 
 - **`SOLUCION.md`** — objetivo del laboratorio, direccionamiento IP, configuración completa en CLI y comandos de verificación.
-- **`topologia.png`** — captura de la topología armada en EVE-NG.
+- **`topologia.png`** — captura de la topología armada en EVE-NG (la imagen incluida por ahora es un diagrama de referencia; se reemplaza por la captura real de cada laboratorio).
 
 > ⚖️ **Nota sobre derechos de autor:** los enunciados originales de las prácticas pertenecen a Cisco Networking Academy (NetAcad) y no se redistribuyen en este repositorio. Lo que aquí se publica es mi propia solución, configuración y documentación de cada ejercicio.
 
