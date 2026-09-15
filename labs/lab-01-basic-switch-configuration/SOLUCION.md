@@ -47,9 +47,8 @@ interface vlan 99
  exit
 
 ! Asignar el/los puertos de acceso del host a la VLAN 99
-! (ajusta el rango de interfaces al nombre real que use tu imagen en EVE-NG,
-!  p. ej. GigabitEthernet0/1, FastEthernet0/1, etc. — verifícalo con "show ip interface brief")
-interface range gigabitEthernet 0/1 - 24
+! (ajusta el rango de interfaces al nombre real que use tu imagen en EVE-NG — verifícalo con "show ip interface brief")
+interface ethernet 0/0
  switchport mode access
  switchport access vlan 99
  exit
@@ -64,8 +63,8 @@ line console 0
  login
  exit
 
-! Acceso remoto (Telnet por ahora — se endurece con SSH en el Lab 02)
-line vty 0 15
+! Acceso remoto Telnet por ahora
+line vty 0 4
  password cisco
  login
  exit
