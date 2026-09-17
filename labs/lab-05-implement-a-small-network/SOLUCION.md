@@ -15,8 +15,8 @@ Armar una red pequeña de tres capas (router + dos switches + dos PC) desde cero
 
 | Desde | Puerto | Hacia | Puerto |
 |---|---|---|---|
-| RTA | e0/0 | SW1 | G0/1 (uplink) |
-| RTA | e0/1 | SW2 | G0/1 (uplink) |
+| RTA | e0/0 | SW1 | e0/1 (uplink) |
+| RTA | e0/1 | SW2 | e0/1 (uplink) |
 | SW1 | e0/1 | PC-1 | NIC |
 | SW2 | e0/1 | PC-2 | NIC |
 
