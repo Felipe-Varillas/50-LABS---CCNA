@@ -17,14 +17,14 @@ R1 y R2 están unidos por un enlace serial y cada uno tiene dos LAN propias (R1 
 
 | Dispositivo | Interfaz | Dirección/Prefijo | Gateway |
 |---|---|---|---|
-| R1 | G0/0 | 172.16.20.1 /25 | N/D |
-| R1 | G0/1 | 172.16.20.129 /25 | N/D |
-| R1 | S0/0/0 | 209.165.200.225 /30 | N/D (ya preconfigurada) |
+| R1 | e0/0 | 172.16.20.1 /25 | N/D |
+| R1 | e0/1 | 172.16.20.129 /25 | N/D |
+| R1 | s1/0 | 209.165.200.225 /30 | N/D (ya preconfigurada) |
 | PC1 | NIC | 172.16.20.10 /25 | 172.16.20.1 |
 | PC2 | NIC | 172.16.20.138 /25 | 172.16.20.129 |
-| R2 | G0/0 | 2001:db8:c0de:12::1 /64 | N/D |
-| R2 | G0/1 | 2001:db8:c0de:13::1 /64 | N/D |
-| R2 | S0/0/1 | 2001:db8:c0de:11::1 /64 + fe80::2 (link-local) | N/D |
+| R2 | e0/0 | 2001:db8:c0de:12::1 /64 | N/D |
+| R2 | e0/1 | 2001:db8:c0de:13::1 /64 | N/D |
+| R2 | s1/0 | 2001:db8:c0de:11::1 /64 + fe80::2 (link-local) | N/D |
 | PC3 | NIC | 2001:db8:c0de:12::a /64 | fe80::2 |
 | PC4 | NIC | 2001:db8:c0de:13::a /64 | fe80::2 |
 
