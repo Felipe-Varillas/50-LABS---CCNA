@@ -8,9 +8,8 @@ Configurar el direccionamiento IPv4 en R1 y sus dos LAN, y el direccionamiento I
 
 ## Topología
 
-![Topología Lab 03](topologia.png)
+![Topología Lab 03](topologia3.png)
 
-*(Imagen de referencia — reemplázala por tu captura real de la topología armada en EVE-NG)*
 
 R1 y R2 están unidos por un enlace serial y cada uno tiene dos LAN propias (R1 en IPv4, R2 en IPv6).
 
@@ -48,17 +47,17 @@ line vty 0 4
  login
  exit
 
-interface GigabitEthernet0/0
+interface ethernet0/0
  ip address 172.16.20.1 255.255.255.128
  no shutdown
  exit
 
-interface GigabitEthernet0/1
+interface ethernet0/1
  ip address 172.16.20.129 255.255.255.128
  no shutdown
  exit
 
-! La interfaz serial S0/0/0 (209.165.200.225/30) ya viene preconfigurada
+! La interfaz serial1/0 (209.165.200.225/30) ya viene preconfigurada
 ! como enlace hacia R2; solo verifica que esté "no shutdown".
 
 end
@@ -74,17 +73,17 @@ hostname R2
 enable secret class
 ipv6 unicast-routing
 
-interface GigabitEthernet0/0
+interface ethernet0/0
  ipv6 address 2001:db8:c0de:12::1/64
  no shutdown
  exit
 
-interface GigabitEthernet0/1
+interface ethernet0/1
  ipv6 address 2001:db8:c0de:13::1/64
  no shutdown
  exit
 
-interface Serial0/0/1
+interface serial1/0
  ipv6 address fe80::2 link-local
  ipv6 address 2001:db8:c0de:11::1/64
  no shutdown
