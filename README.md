@@ -2,7 +2,7 @@
 
 **50 laboratorios prácticos de redes, configurados y verificados en EVE-NG**, rumbo a la certificación Cisco CCNA.
 
-![Labs completados](https://img.shields.io/badge/labs%20completados-5%2F50-blue)
+![Labs completados](https://img.shields.io/badge/labs%20completados-10%2F50-blue)
 ![Simulador](https://img.shields.io/badge/simulador-EVE--NG-orange)
 ![Cisco IOS](https://img.shields.io/badge/plataforma-Cisco%20IOS-1ba0d7)
 ![Licencia](https://img.shields.io/badge/licencia-MIT-lightgrey)
@@ -46,6 +46,21 @@ ccna-labs/
     ├── lab-05-implement-a-small-network/
     │   ├── SOLUCION.md
     │   └── topologia.png
+    ├── lab-06-configure-basic-router-settings/
+    │   ├── SOLUCION.md
+    │   └── topologia.png
+    ├── lab-07-vlan-configuration/
+    │   ├── SOLUCION.md
+    │   └── topologia.png
+    ├── lab-08-configure-vlans-and-trunking/
+    │   ├── SOLUCION.md
+    │   └── topologia.png
+    ├── lab-09-configure-dtp/
+    │   ├── SOLUCION.md
+    │   └── topologia.png
+    ├── lab-10-router-on-a-stick-inter-vlan-routing/
+    │   ├── SOLUCION.md
+    │   └── topologia.png
     └── lab-XX-.../              👈 se irán agregando en el mismo formato
 ```
 
@@ -72,11 +87,11 @@ Cada carpeta de laboratorio contiene:
 | 03 | Configurar interfaces del router | ✅ |
 | 04 | Verificar redes directamente conectadas | ✅ |
 | 05 | Implementar una red pequeña | ✅ |
-| 06 | Configurar parámetros básicos del router | ⏳ |
-| 07 | Configuración de VLAN | ⏳ |
-| 08 | Configurar VLANs y trunking | ⏳ |
-| 09 | Configurar DTP | ⏳ |
-| 10 | Router-on-a-Stick — Inter-VLAN Routing | ⏳ |
+| 06 | Configurar parámetros básicos del router | ✅ |
+| 07 | Configuración de VLAN | ✅ |
+| 08 | Configurar VLANs y trunking | ✅ |
+| 09 | Configurar DTP | ✅ |
+| 10 | Router-on-a-Stick — Inter-VLAN Routing | ✅ |
 | 11 | Layer 3 Switching e Inter-VLAN Routing | ⏳ |
 | 12 | Solucionar problemas de Inter-VLAN Routing | ⏳ |
 | 13 | Investigar la prevención de bucles con STP | ⏳ |
