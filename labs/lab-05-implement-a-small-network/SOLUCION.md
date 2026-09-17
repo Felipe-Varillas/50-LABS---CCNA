@@ -8,27 +8,26 @@ Armar una red pequeña de tres capas (router + dos switches + dos PC) desde cero
 
 ## Topología
 
-![Topología Lab 05](topologia.png)
+![Topología Lab 05](topologia5.png)
 
-*(Imagen de referencia — reemplázala por tu captura real de la topología armada en EVE-NG)*
 
 ## Conexiones físicas
 
 | Desde | Puerto | Hacia | Puerto |
 |---|---|---|---|
-| RTA | G0/0 | SW1 | G0/1 (uplink) |
-| RTA | G0/1 | SW2 | G0/1 (uplink) |
-| SW1 | F0/1 | PC-1 | NIC |
-| SW2 | F0/1 | PC-2 | NIC |
+| RTA | e0/0 | SW1 | G0/1 (uplink) |
+| RTA | e0/1 | SW2 | G0/1 (uplink) |
+| SW1 | e0/1 | PC-1 | NIC |
+| SW2 | e0/1 | PC-2 | NIC |
 
-> En EVE-NG, si usas una imagen IOSvL2 para los switches, los nombres de puerto pueden ser `GigabitEthernet0/0`–`0/3` en vez de `FastEthernet0/1`; ajusta los nombres de interfaz de este documento a los que te muestre `show ip interface brief` en tu propio laboratorio.
+> En EVE-NG, si usas una imagen IOSvL2 para los switches, los nombres de puerto pueden ser `GigabitEthernet0/0`–`0/3` en vez de `Ethernet0/1`; ajusta los nombres de interfaz de este documento a los que te muestre `show ip interface brief` en tu propio laboratorio.
 
 ## Tabla de direccionamiento
 
 | Dispositivo | Interfaz | Dirección | Máscara | Gateway |
 |---|---|---|---|---|
-| RTA | G0/0 | 10.10.10.1 | 255.255.255.0 | N/D |
-| RTA | G0/1 | 10.10.20.1 | 255.255.255.0 | N/D |
+| RTA | e0/0 | 10.10.10.1 | 255.255.255.0 | N/D |
+| RTA | e0/1 | 10.10.20.1 | 255.255.255.0 | N/D |
 | SW1 | VLAN 1 | 10.10.10.2 | 255.255.255.0 | 10.10.10.1 |
 | SW2 | VLAN 1 | 10.10.20.2 | 255.255.255.0 | 10.10.20.1 |
 | PC-1 | NIC | 10.10.10.10 (cualquier IP libre de la LAN) | 255.255.255.0 | 10.10.10.1 |
@@ -57,13 +56,13 @@ line vty 0 4
  login
  exit
 
-interface GigabitEthernet0/0
+interface ethernet0/0
  description Enlace hacia SW1 -- LAN 10.10.10.0/24
  ip address 10.10.10.1 255.255.255.0
  no shutdown
  exit
 
-interface GigabitEthernet0/1
+interface ethernet0/1
  description Enlace hacia SW2 -- LAN 10.10.20.0/24
  ip address 10.10.20.1 255.255.255.0
  no shutdown
