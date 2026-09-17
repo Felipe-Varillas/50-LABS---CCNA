@@ -8,22 +8,21 @@ A diferencia del Lab 03 (donde se configura desde cero), aquí R1 y R2 **ya tien
 
 ## Topología
 
-![Topología Lab 04](topologia.png)
+![Topología Lab 04](topologia4.png)
 
-*(Imagen de referencia — reemplázala por tu captura real de la topología armada en EVE-NG. Es la misma topología física del Lab 03: R1 con dos LAN IPv4 y R2 con dos LAN IPv6, unidos por un enlace serial)*
 
 ## Tabla de direccionamiento (estado correcto esperado)
 
 | Dispositivo | Interfaz | Dirección/Prefijo | Gateway |
 |---|---|---|---|
-| R1 | G0/0/0 | 172.16.20.1 /25 | N/D |
-| R1 | G0/0/1 | 172.16.20.129 /25 | N/D |
-| R1 | S0/1/0 | 209.165.200.225 /30 | N/D |
+| R1 | e0/0 | 172.16.20.1 /25 | N/D |
+| R1 | e0/1 | 172.16.20.129 /25 | N/D |
+| R1 | s1/0 | 209.165.200.225 /30 | N/D |
 | PC1 | NIC | 172.16.20.10 /25 | 172.16.20.1 |
 | PC2 | NIC | 172.16.20.138 /25 | 172.16.20.129 |
-| R2 | G0/0/0 | 2001:db8:c0de:12::1 /64 | N/D |
-| R2 | G0/0/1 | 2001:db8:c0de:13::1 /64 | N/D |
-| R2 | Serial 1/1 | 2001:db8:c0de:11::1 /64 + fe80::2 | N/D |
+| R2 | e0/0 | 2001:db8:c0de:12::1 /64 | N/D |
+| R2 | e0/1 | 2001:db8:c0de:13::1 /64 | N/D |
+| R2 | s1/0 | 2001:db8:c0de:11::1 /64 + fe80::2 | N/D |
 | PC3 | NIC | 2001:db8:c0de:12::a /64 | fe80::2 |
 | PC4 | NIC | 2001:db8:c0de:13::a /64 | fe80::2 |
 
@@ -37,7 +36,7 @@ Comandos de verificación (usando filtros de salida, que es justamente lo que ev
 R1# show ip interface brief | exclude unassigned
 R1# show ip route | begin Gate
 R1# show interface | include Desc|conn
-R1# show interface g0/0/0 | include duplex
+R1# show interface e0/0 | include duplex
 ```
 
 - `show ip interface brief | exclude unassigned` — descarta del listado cualquier interfaz sin IP, para enfocarte solo en las que importan.
@@ -46,11 +45,11 @@ R1# show interface g0/0/0 | include duplex
 
 ```bash
 configure terminal
-interface GigabitEthernet0/0/0
+interface ethernet0/0
  ip address 172.16.20.1 255.255.255.128
  no shutdown
  exit
-interface GigabitEthernet0/0/1
+interface ethernet0/1
  ip address 172.16.20.129 255.255.255.128
  no shutdown
  exit
@@ -64,11 +63,11 @@ copy running-config startup-config
 R2# show ipv6 interface brief
 ```
 
-El fallo típico de este laboratorio es una dirección IPv6 incorrecta en `G0/0/1` (por ejemplo `2001:db8:c0de:14::1/64` en vez de la `...13::1/64` que pide la tabla). Como una interfaz puede tener varias direcciones IPv6 asignadas a la vez, **primero se retira la incorrecta y luego se agrega la correcta**:
+El fallo típico de este laboratorio es una dirección IPv6 incorrecta en `e0/1` (por ejemplo `2001:db8:c0de:14::1/64` en vez de la `...13::1/64` que pide la tabla). Como una interfaz puede tener varias direcciones IPv6 asignadas a la vez, **primero se retira la incorrecta y luego se agrega la correcta**:
 
 ```bash
 configure terminal
-interface GigabitEthernet0/0/1
+interface ethernet0/1
  no ipv6 address 2001:db8:c0de:14::1/64
  ipv6 address 2001:db8:c0de:13::1/64
  exit
