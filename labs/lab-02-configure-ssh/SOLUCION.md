@@ -41,14 +41,14 @@ configure terminal
 ! Nombre de dominio requerido para generar las claves RSA
 ip domain-name netacad.pka
 
-! Genera el par de claves RSA de 1024 bits
-crypto key generate rsa modulus 1024
+! Genera el par de claves RSA de 2048 bits
+crypto key generate rsa modulus 2048
 
 ! Usuario local para autenticación SSH
 username admin secret cisco
 
 ! Reconfigurar VTY: solo SSH, autenticación contra la base local de usuarios
-line vty 0 15
+line vty 0 4
  login local
  transport input ssh
  no password
